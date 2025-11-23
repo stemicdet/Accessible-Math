@@ -10,4 +10,7 @@
     </image>
   </figure>
   <p>bar</p>
+  <p> Here is math <m>\int_0^1 f(x)dx</m> tada</p>
+  <p> Here is a math equation </p>
+  <me>\int_0^1 f(x)dx</me>
 </section>
