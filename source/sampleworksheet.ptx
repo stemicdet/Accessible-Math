@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+
+  
+
+ 
+
+    <section xml:id="sampleworksheet" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title> Worksheets </title>  
+      <worksheet label="worksheet-geometric-prelude">
+        <title> Worksheet 1 </title>
+      <exercise workspace = "3in">
+        <p>
+        Evaluate the double integral
+          <me> \iint_R x^2\sin(y)dA </me>
+        where <m>R</m> is the triangle with vertices at <m>(0,1)</m>, <m>(1,1)</m> and <m>(2,1)</m>.
+        </p>    
+      </exercise>   
+      
+      <exercise workspace = "2in">
+        <p>
+        Evaluate the contour integral
+          <me> \int_C x^2 dy - ydx </me>
+        where <m>C</m> is the triangle with vertices at <m>(0,1)</m>, <m>(1,1)</m> and <m>(2,1)</m> oriented in the counterclockwise direction.
+        </p> 
+      </exercise> 
+      </worksheet>   
+    </section>
+
+
+
