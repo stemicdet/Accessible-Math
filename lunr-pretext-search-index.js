@@ -7,7 +7,7 @@ var ptx_lunr_docs = [
   "type": "Front Matter",
   "number": "",
   "title": "Front Matter",
-  "body": "  Author X. Lastname    This is the abstract.   "
+  "body": "  Author S. Deterding    This is the abstract.   "
 },
 {
   "id": "section-1",
@@ -34,7 +34,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2",
   "title": "My Additional Section",
-  "body": " My Additional Section  foo   The graph made by TikZ   A 5-cycle     bar  "
+  "body": " My Additional Section  foo   The graph made by TikZ   A 5-cycle     bar  Here is math tada  Here is a math equation   "
 },
 {
   "id": "figure-tikz-example-diagram",
@@ -44,6 +44,33 @@ var ptx_lunr_docs = [
   "number": "2.1",
   "title": "",
   "body": " The graph made by TikZ   A 5-cycle    "
+},
+{
+  "id": "sampleworksheet",
+  "level": "1",
+  "url": "sampleworksheet.html",
+  "type": "Section",
+  "number": "3",
+  "title": "Worksheets",
+  "body": " Worksheets   Worksheet 1   Evaluate the double integral where is the triangle with vertices at , and .    Evaluate the contour integral where is the triangle with vertices at , and oriented in the counterclockwise direction.    "
+},
+{
+  "id": "worksheet-geometric-prelude-2",
+  "level": "2",
+  "url": "sampleworksheet.html#worksheet-geometric-prelude-2",
+  "type": "Worksheet Exercise",
+  "number": "3.1.1",
+  "title": "",
+  "body": " Evaluate the double integral where is the triangle with vertices at , and .  "
+},
+{
+  "id": "worksheet-geometric-prelude-3",
+  "level": "2",
+  "url": "sampleworksheet.html#worksheet-geometric-prelude-3",
+  "type": "Worksheet Exercise",
+  "number": "3.1.2",
+  "title": "",
+  "body": " Evaluate the contour integral where is the triangle with vertices at , and oriented in the counterclockwise direction.  "
 }
 ]
 
