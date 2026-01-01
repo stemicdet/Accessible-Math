@@ -1,16 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xml:id="section-2" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>My Additional Section</title>
-  <p>foo</p>
-  <figure xml:id="figure-tikz-example-diagram">
-    <caption>The graph <m>C_5</m> made by TikZ</caption>
-    <image xml:id="tikz-example-diagram" width="20%">
-      <description>A 5-cycle</description>
-      <latex-image> \begin{tikzpicture} \coordinate (A) at (90+360/5:1); \coordinate (B) at (90+2*360/5:1); \coordinate (C) at (90+3*360/5:1); \coordinate (D) at (90+4*360/5:1); \coordinate (E) at (90:1); \draw (A) -- (B) -- (C) -- (D) -- (E) -- (A); \foreach \x in {(A), (B), (C), (D), (E)}{ \fill \x circle (2pt); } \end{tikzpicture} </latex-image>
-    </image>
-  </figure>
-  <p>bar</p>
-  <p> Here is math <m>\int_0^1 f(x)dx</m> tada</p>
-  <p> Here is a math equation </p>
-  <me>\int_0^1 f(x)dx</me>
+  <title>The Derivative</title>
+  
+  <p>
+    The modern definition of the derivative is defined as follows.
+  </p>
+
+  <definition>
+    <statement>
+    <p>
+      Let <m>g:A \to \mathbf{R}</m> be a function defined on an interval <m>A</m>. Given <m>c\in A</m> the derivative of <m>g</m> at <m>c</m> is given by
+    </p>
+ 
+
+  <md>
+    g'(c) = \lim_{x\to c} \frac{g(x)-g(c)}{x-c}
+  </md>
+
+  <p>
+    provided this limit exists. In this case we say <m>g</m> is differentiable at <m>c</m>. If <m>g'</m> exists for all points <m>c \in A</m> we say that <m>g</m> is differentiable on <m>A</m>.
+  </p>
+  </statement>
+   </definition>
+  
+<p>
+  Hidden in this definition is the <m>\epsilon</m>-<m>\delta</m> relationship that comes from the way that the limit is defined. The <m>\epsilon</m>-<m>\delta</m> definition of the derivative looks like this.
+</p>
+<definition>
+<statement>
+  <p>
+  Let <m>g:A \to \mathbf{R}</m> be a function defined on an interval <m>A</m>. Then the derivative of <m>g</m> at <m>c \in A</m> is <m>L</m> if for every <m>\epsilon>0</m>, there exists <m>\delta>0</m> such that 
+</p>
+
+<md>
+ \left| \frac{g(x)-g(c)}{x-c}-L \right| \le \epsilon
+</md>
+
+<p>
+  whenever <m>|x-c| \le \delta</m>
+</p>
+
+<p>
+  Note that by letting <m>x = c+h</m> the derivative can be rewritten as 
+</p>
+
+<md>
+  \lim_{h\to 0} \frac{g(c+h)-g(c)}{h}
+</md>
+</statement>
+</definition>
+
+<p>
+  In geometry a tangent line to a curve is a line that touches the curve and follows the same direction as the curve at the point of contact.
+</p>
+
+
+
 </section>

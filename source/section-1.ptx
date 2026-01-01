@@ -1,19 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xml:id="section-1" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>My First Section</title>
-  <introduction>
-    <p>Some words</p>
-  </introduction>
-  <subsection xml:id="subsection-1">
-    <title>My First Subsection</title>
-    <p>Some more words</p>
-    <p>foo</p>
-    <figure>
-      <caption>A frog</caption>
-      <image source="frog.jpg" width="50%">
-        <description>A nice-looking frog with a longish description.</description>
-      </image>
-    </figure>
-    <p>Bar: <m>\foo</m></p>
-  </subsection>
+  <title>A Brief History of the Derivative</title>
+    <p>In the 17th century, Galileo discovered that the distance traveled by a falling object is proportional to the square of the time it has been falling. More precisely, if the distance fallen after <m>t</m> seconds is denoted <m>s(t)</m> and measured in meters, then</p>
+    <me> s(t) = 4.9t^2 </me>
+    <p> From this we can find the average velocity of a falling object over any time interval using the formula </p>
+    <me> \text{Average Velocity} = \dfrac{\text{Change in Position}}{\text{Change in Time}} </me>
+    
+    <p>
+      Suppose however, that we wanted to find the instantaneous velocity of an object 3 seconds after we drop it.
+    </p>
+
+    <p>
+      The difficulty here is that we have a single instance of time instead of a time interval.
+    </p>
+
+    <p>
+      Isaac Newton's approach to this problem was to approximate the instantaneous velocity by calculating the average velocity over smaller and smaller intervals.
+    </p>
+
+    <p>
+      The following table shows the average velocity over successively smaller time intervals.
+    </p>
+
+    <table>
+  <title>Average Velocity</title>
+  <tabular halign="center">
+    <row header="yes" bottom="minor" >
+      <cell>Time Interval </cell>
+      <cell>Average Velocity <m>(m/s)</m></cell>
+    </row>
+    <row>
+      <cell><m>3\leq t \leq 3.01</m></cell>
+      <cell>29.449</cell>
+    </row>
+    <row>
+     <cell><m>3\leq t \leq 3.001</m></cell>
+      <cell>29.4049</cell>
+    </row>
+    <row>
+     <cell><m>3\leq t \leq 3.0001</m></cell>
+      <cell>29.40049</cell>
+    </row>
+  </tabular>
+
+</table>
+
+<p>
+  It appears that as the time intervals get shorter, the average velocities get closer and closer to 29.4. Newton gave the following argument for why 29.4 is in fact the exact instantaneous velocity.
+</p>
+
+<p>
+  Let <m>h</m> be a small positive number. Then the average velocity of the falling object during the time interval <m>[3,3+h]</m> is
+</p>
+
+<md>
+  <mrow> \frac{s(3+h)-s(3)}{3+h-3} \amp = \frac{4.9(3+h)^2-4.9(3)^2}{h} </mrow>
+  <mrow> \amp = \frac{4.9[9+6h+h^2-9]}{h} </mrow>
+  <mrow> \amp = \frac{29.4h+4.9h^2}{h}</mrow>
+  <mrow> \amp = 29.4+4.9h</mrow>
+</md>
+
+<p>
+  Newton then argued that since <m>h</m> is an arbitrarily small positive number, terms ``multiplied by it will be nothing in respect to the rest'' and thus the exact instantaneous velocity is <m>29.4</m> <m>m/s</m>.
+</p>
+
+<p>
+  Newton used the term ``fluxion'' for what we now call the derivative. He wrote a book called <em>The Method of Fluxions</em> in 1671 but it wasn't published until 1736.
+</p>
+
+<p>
+  In 1734 the philosopher George Berkeley criticized Newton's argument in his book <em>The Analyst</em> (subtitled <em>A Discourse Addressed to an Infidel Mathematician: Wherein It Is Examined Whether the Object, Principles, and Inferences of the Modern Analysis Are More Distinctly Conceived, or More Evidently Deduced, Than Religious Mysteries and Points of Faith</em>)
+</p>
+
+<p>
+  Berkeley's main objection to Newton's argument was that Newton treated the infinitesimal quantity <m>h</m> as though it were both zero (by removing the <m>4.9h</m> term) and nonzero (by dividing by <m>h</m>).
+</p>
+
+<p>
+  ``And what are these fluxions? The velocities of evanescent increments. And what are these same evanescent increments? They are neither finite quantities, nor quantities infinitely small, nor yet nothing. May we not call them ghosts of departed quantities?''
+</p>
+
+<p>
+  In response to Berkeley's criticisms a number of mathematicians worked to find a more rigorous definition of the derivative.
+</p>
+
+<p>
+  In 1823 Cauchy gave a definition of derivative that used the concepts of limits to handle Berkeley's objection. His definition is basically the same as the modern definition of the derivative.
+</p>
+
+<p>
+  During the 1960's Abraham Robinson developed the theory of nonstandard analysis which provides a rigorous definition of infinitesimals and allows for the derivative to be defined in the same spirit of Newton and Leibniz.
+</p>
+    
+    
 </section>
