@@ -55,11 +55,73 @@
 </p>
 
 <figure>
-      <caption>A frog</caption>
-      <image source="frog.jpg" width="50%">
-        <description>A nice-looking frog with a longish description.</description>
+      <caption>A tangent line to a curve</caption>
+      <image source="desmos-graph (39).png" width="50%">
+        <description>A picture of a cubic function with a tangent line.</description>
       </image>
     </figure>
+
+  <p>
+    A secant line to a curve is a line that passes through 2 points on a curve.
+  </p>
+
+  <p>
+    The slope of the secant line on the curve <m>f(x)</m> that passes through points <m>(a,f(a))</m> and <m>(b,f(b))</m> is given by
+  </p>
+
+  <md>
+    \frac{f(a)-f(b)}{a-b}
+  </md>
+
+  <p>
+    As we take the limit as <m>a</m> approaches <m>b</m>, the secant line comes closer and closer to the tangent line at <m>b</m>. Thus the slope of the tangent line at <m>(b,f(b))</m> is
+  </p>
+
+<md>
+  \lim_{a\to b} \frac{f(a)-f(b)}{a-b} = f'(b)
+</md>
+
+<p>
+  The example with the absolute value function shows that a continuous function may fail to be differentiable; however, every differentiable function must be continuous.
+</p>
+
+<theorem xml:id="thm-diff-implies-cont">
+  <statement>
+    <p>
+      If <m>g: A \to \mathbf{R}</m> is differentiable at a point <m>c \in A</m>, then <m>g</m> is continuous at <m>c</m> as well.
+    </p>
+  </statement>
+</theorem>
+
+<proof>
+  <p>
+    Since <m>g</m> is differentiable at <m>c</m>,
+
+    <md>
+      g'(c) = \lim_{x\to c} \frac{g(x)-g(c)}{x-c}
+    </md>
+    
+    exists.
+  </p>
+
+  <p>
+    We want to show <m>\displaystyle \lim_{x\to c} g(x) = g(c)</m>. By the Algebraic Limit Theorem for functional limits
+
+    <md>
+      \lim_{x\to c} (g(x)-g(c)) = \lim_{x\to c} \left( \frac{g(x)-g(c)}{x-c}\right)(x-c) = g'(c) \cdot 0 = 0.
+    </md>
+    
+  </p>
+    
+    
+  <p>
+    It follows that 
+    <md>
+      \lim_{x\to c} g(x) = g(c).
+    </md>
+  </p>
+
+</proof>
 
 
 </section>
