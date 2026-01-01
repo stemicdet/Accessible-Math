@@ -123,5 +123,31 @@
 
 </proof>
 
+<p>
+A differentiable function must be continuous, but does the derivative, when viewed as a function of <m>x</m> have to be continuous?
+</p>  
+
+<p>
+During the 1870's French Mathematician Jules Ho\"{u}el was writing a calculus textbook and asked his friend Gaston Darboux to look it over. Darboux was unhappy with some of Ho\"{u}el's proofs and came up with the following <q> monster function </q> as a counterexample.
+<md>
+f(x) = \begin{cases} 
+     <mrow> \hfill  x^2 \sin(1/x) \amp \text{ if $x \neq 0$} </mrow>
+     <mrow> \hfill  0 \hfill \amp \text{ if $x =0 $} </mrow>
+     \end{cases}
+</md>
+</p>
+
+<p>
+ Here is the graph of Darboux's function. 
+</p>  
+
+<figure>
+      <caption>The graph of Darboux's function</caption>
+      <image source="desmos-graph - 2022-12-06T202928.958.png" width="50%">
+        <description>A picture of a cubic function with a tangent line.</description>
+      </image>
+    </figure>
+
+
 
 </section>
