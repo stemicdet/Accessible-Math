@@ -128,12 +128,12 @@ A differentiable function must be continuous, but does the derivative, when view
 </p>  
 
 <p>
-During the 1870's French Mathematician Jules Ho\"{u}el was writing a calculus textbook and asked his friend Gaston Darboux to look it over. Darboux was unhappy with some of Ho\"{u}el's proofs and came up with the following <q> monster function </q> as a counterexample.
+During the 1870's French Mathematician Jules Houel was writing a calculus textbook and asked his friend Gaston Darboux to look it over. Darboux was unhappy with some of Houel's proofs and came up with the following <q> monster function </q> as a counterexample.
 <md>
 f(x) = \begin{cases} 
-     <mrow> \hfill  x^2 \sin(1/x) \amp \text{ if $x \neq 0$} </mrow>
-     <mrow> \hfill  0 \hfill \amp \text{ if $x =0 $} </mrow>
-     \end{cases}
+      \hfill  x^2 \sin(1/x) \amp \text{ if $x \neq 0$} \\
+      \hfill  0 \hfill \amp \text{ if $x =0 $} \\
+  \end{cases}
 </md>
 </p>
 
@@ -144,10 +144,47 @@ f(x) = \begin{cases}
 <figure>
       <caption>The graph of Darboux's function</caption>
       <image source="desmos-graph - 2022-12-06T202928.958.png" width="50%">
-        <description>A picture of a cubic function with a tangent line.</description>
+        <description>A picture of a function that oscilates between positive and negative values and tends to 0 as x approaches 0 .</description>
       </image>
     </figure>
 
+<p>
+  <em>Go on then and explain to me a little, I beg you, why it is that when one uses the rule for composition functions, the derivative of <m>y = x^2 \sin(1/x)</m> is found to be <m>-\cos(1/x) + 2x \sin(1/x)</m> which is indeterminate for <m>x=0</m> even though the true value is <m>\lim y/x = 0</m></em> -- excerpt from a letter from Darboux to Houel
+</p>
 
+<p>
+  Let's verify Darboux's claim about the derivative of this function using the chain rule.
+</p>
+
+<p>
+  The derivative of Darboux's function is 
+  <md>
+f(x) = \begin{cases} 
+      \hfill  2x \sin(1/x) - \cos(1/x) \amp \text{ if $x \neq 0$} \\
+      \hfill  0 \hfill \amp \text{ if $x =0 $} \\
+  \end{cases}
+</md>
+</p>
+
+  
+<p>
+  Here is the graph of the derivative of Darboux's function.
+</p>
+
+<figure>
+      <caption>The graph of the derivative of Darboux's function</caption>
+      <image source="desmos-graph - 2022-12-06T204150.873.png" width="50%">
+        <description>A picture of a function that oscilates between positive and negative values but does not tend to a single value as x approaches 0 .</description>
+      </image>
+</figure>
+
+<p>
+  Darboux's function is continuous and differentiable everywhere; however its derivative is not continuous at $0$. Thus a derivative does not need to be a continuous function.
+</p>
+
+<p>
+  The discontinuity of Darboux's function is an essential discontinuity, meaning that the one sided limits do not exist. In general this is the type of discontinuity that a derivative must have.
+
+</p>
 
 </section>
