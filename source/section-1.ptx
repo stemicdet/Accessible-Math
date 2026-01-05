@@ -292,7 +292,267 @@ f(x) = \begin{cases}
 <subsection xml:id="section-3" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Combinations of differentiable functions</title>
 
+  <theorem xml:id="thm-Chain-Rule">
+    <statement>
+      <p>
+        Let <m>f: A \to \mathbf{R}</m> and <m>g: B \to \mathbf{R}</m> satisfy <m>f(A) \subseteq B</m> so that the composition <m>g \circ f</m> is defined. If <m>f</m> is differentiable at <m>c \in A</m> and if <m>g</m> is differentiable at <m>f(c) \in B</m>, then <m>g \circ f</m> is differentiable at <m>c</m> with <m>(g \circ f)'(c) = g'(f(c)) \cdot f'(c)</m>
+      </p>
+    </statement>
+  </theorem>
   
+
+  <p>
+    Almost Proof:
+<md>
+  <mrow> (g\circ f)'(c) \amp = \lim_{x\to c} \frac{g(f(x))-g(f(c))}{x-c} </mrow>
+  <mrow> \amp =\lim_{x\to c} \frac{g(f(x))-g(f(c))}{f(x)-f(c)} \cdot \frac{f(x)-f(c)}{x-c} </mrow>
+  <mrow> \amp =g'(f(c))\cdot f'(c)</mrow>
+</md>
+
+  </p>
+
+  <p>
+    The reason that the <q>almost proof</q> doesn't work as a rigorous proof is that it may be the case that in every <m>\delta</m> neighborhood of <m>c</m> there is an <m>x</m> such that <m>f(x) = f(c)</m> which causes division by zero. The proof will need to remedy this. 
+  </p>
+
+  <p>
+    We will need the following result as a preliminary lemma for proving the Chain rule.
+  </p>
+
+<theorem xml:id="thm-caratheodory">
+  <title>Caratheodory's Theorem</title>
+  
+  
+  <statement>
+    <p>
+      Let <m>f</m> be defined on an interval <m>I</m> containing the point <m>c</m>. Then <m>f</m> is differentiable at <m>c</m> if and only if there exists a function <m>\phi</m> on <m>I</m> that is continuous at <m>c</m> and satisfies
+      <md>
+        f(x) - f(c) = \phi(x) (x-c)
+      </md>
+      for <m>x \in I</m>. In this case we have <m>\phi(c) = f'(c)</m>.
+    </p>
+  </statement>
+</theorem>
+
+<proof>
+  <p>
+    For the forward direction, if <m>f'(c)</m> exists define <m>\phi(x)</m> by
+    <md>
+\phi(x) = \begin{cases} 
+      \hfill  \frac{f(x)-f(c)}{x-c} /amp \text{ if $x \neq c$} \\
+      \hfill  f'(c) \hfill /amp \text{ if $x =c $} \\
+</md>
+  </p>
+
+
+  <p>
+    <m>\phi(x)</m> is continuous because <md>
+  f'(c) = \lim_{x\to c} \frac{f(x)-f(c)}{x-c}
+</md>
+  </p>
+
+  <p>
+    Also <m>f(x) - f(c) = \phi(x) (x-c)</m> for all <m>x \in I</m>. Thus the forward direction is proved.
+  </p>
+
+  <p>
+    For the reverse direction, suppose that a function <m>\phi</m> exists that is continuous and <m>f(x) - f(c) = \phi(x) (x-c)</m> for all <m>x \in I</m>.
+  </p>
+
+  <p>
+    Then since <m>\phi</m> is continuous
+
+    <md>
+      \phi(c) = \lim_{x\to c} \phi(x) = \lim_{x\to c} \frac{f(x)-f(c)}{x-c} = f'(c)
+    </md>
+  </p>
+
+  <p>
+    Thus <m>f'(c)</m> exists and <m>f'(c) = \phi(c)</m>.
+  </p>
+
+</proof>
+
+<p>
+  We are now ready to present the proof of the chain rule.
+</p>
+
+<proof>
+  <p>
+    Since <m>f'(c)</m> exists Caratheodory's Theorem gives that there exists <m>\phi(x)</m> such that <m>\phi</m> is continuous at <m>c</m> and <m>f(x)-f(c) = \phi(x)(x-c)</m>, where <m>\phi(c) = f'(c)</m>
+  </p>
+
+  <p>
+    Since <m>g'(f(c))</m> exists Caratheodory's Theorem gives that there exists <m>\psi(x)</m> such that <m>\psi</m> is continuous at <m>d = f(c)</m> and <m>g(y)-g(d) = \psi(y)(y-d)</m> for <m>y \in I</m> where <m>\psi(d) = g'(d)</m>.
+  </p>
+
+  <p>
+    Now substitute <m>y = f(x)</m> and <m>d=f(c)</m> to obtain
+    <md>
+      g(f(x))-g(f(c)) = \psi(f(x)) (f(x)-f(c)) = \psi(f(x)) \phi(x) (x-c)
+    </md>
+    
+  </p>
+
+  <p>
+    The function <m>\psi(f(x)) \phi(x)</m> is continuous at <m>c</m>. Hence by Caratheodory's Theorem <m>g(f(x))</m> is differentiable at <m>c</m>.
+  </p>
+
+  <p>
+    Moreover, <m>\psi(f(c)) \phi(c) = g'(f(c) f'(c)</m> and hence <m>(g \circ f)'(x) = g'(f(c)) f'(c)</m>.
+  </p>
+
+</proof>
+
+<theorem xml:id="thm-algebraic-differentiability">
+  <title>Algebraic Differentiability Theorem</title>
+  
+  
+  <statement>
+    <p>
+      Let <m>f</m> and <m>g</m> be functions defined on an interval <m>A</m> and assume both are differentiable at some point <m>c \in A</m>. Then 
+      <ol>
+        <li>
+          <p>
+          <md>
+            (f \pm g)'(c) = f'(c) \pm g'(c)
+          </md>
+        </p>
+        </li>
+        <li>
+          <p>
+            <md>
+              (kf)'(c) = kf'(c) \text{ for all } k \in \mathbf{R}
+            </md>
+            
+          </p>
+        </li>
+        <li>
+          <p>
+            <md>
+              (fg)'(c) = f'(c)g(c)+f(c)g'(c)
+            </md>
+            
+          </p>
+        </li>
+        <li>
+          <p>
+            <md>
+              (\frac{f}{g})'(c) = \frac{g(c)f'(c)-f(c)g'(c)}{g(c)^2}
+            </md>
+            
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</theorem>
+
+<p>
+  The proof is left as homework.
+</p>
+
+
+</subsection>
+
+<subsection xml:id="subsec-4">
+  <title>The Intermediate Value Property</title>
+  
+  <p>
+    Recall the Intermediate Value Theorem for continuous functions.
+  </p>
+
+  <p>
+    Let <m>f: [a,b] \to \mathbf{R}</m> be continuous. If <m>L</m> is a real number satisfying <m>f(a)\le L \le f(b)</m> or <m>f(a)\ge L \ge f(b)</m>, then there exists a point <m>c \in (a,b)</m> such that <m>f(c) = L</m>.
+  </p>
+
+  <p>
+    We say that a function <m>g(x)</m> (not necessarily continuous) satisfies the Intermediate Value Property if whenever <m>L</m> is a real number satisfying <m>g(a)\le L \le g(b)</m> or <m>g(a)\ge L \ge g(b)</m>, then there exists a point <m>c \in (a,b)</m> such that <m>g(c) = L</m>.
+  </p>
+
+  <p>
+    Example: Darboux's function
+    <md>
+      f(x) = \begin{cases} 
+      \hfill  x^2 \sin(1/x) \amp \text{ if $x \neq 0$} \\
+      \hfill  0 \hfill \amp \text{ if $x =0 $} \\
+  \end{cases}
+    </md>
+
+    is continuous and hence satisfies the Intermediate Value Property.
+    
+  </p>
+
+  <p>
+    The derivative of Darboux's function is not continuous at <m>0</m>; however, it still satisfies the Intermediate Value Property.
+  </p>
+
+  <p>
+    In fact, Darboux proved that every derivative satisfies the Intermediate Value Property.
+  </p>
+
+  <p>
+    The proof that every derivative satisfies the Intermediate Value Property follows from one of the most important uses of the derivative, determining the maximum or minimum values of a function.
+  </p>
+
+<theorem xml:id="thm-interior-extremum">
+  <title>Interior Extremum Theorem</title>
+  
+  
+  <statement>
+    <p>
+      Let <m>f</m> be differentiable on an open interval <m>(a,b)</m>. If <m>f</m> attains a maximum value at some point <m>c \in (a,b)</m> (i.e., <m>f(c)\geq f(x)</m> for all <m>x \in (a,b)</m>) then <m>f'(c) = 0</m>. The same is true if <m>f(c)</m> is a minimum value.
+    </p>
+  </statement>
+</theorem>
+
+<proof>
+  <p>
+    Since <m>c</m> is a maximum, <m>f(x)-f(c) \leq 0</m> and hence
+    <md>
+      \lim_{x\to c^+} \frac{f(x)-f(c)}{x-c} \leq 0
+    </md>
+
+    while
+
+    <md>
+      \lim_{x\to c^-} \frac{f(x)-f(c)}{x-c} \geq 0.
+    </md>
+    
+    
+  </p>
+
+  <p>
+    Since <m>f'(c)</m> exists, both one sided limits exist and equal <m>f'(c)</m>. Hence <m>f'(c) = 0</m>. The proof when <m>c</m> is a minimum is similar.
+  </p>
+</proof>
+
+<p>
+  We need one more lemma before we are ready to prove that derivatives possess the Intermediate Value Property.
+</p>
+
+<lemma xml:id="lem-not-in-book">
+  <title>(Not In Book)</title>
+  
+  
+  <statement>
+    <p>
+      Let <m>I \subset \mathbf{R}</m> be an interval, let <m>c \in I</m> and suppose that <m>f</m> has a derivative at <m>c</m>. Then
+    </p>
+    <ol>
+      <li>
+        <p>
+          If <m>f'(c) \le 0</m> there exists <m>\delta>0</m> such that <m>f(x) \le f(c)</m> for <m>x \in I</m> such that <m>c \le x \le c+\delta</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>f'(c)>0</m>, then there is a number <m>\delta>0</m> such that <m>f(x) \le f(c)</m> for <m>x \in I</m> such that <m>c-\delta \le x \le c</m>
+        </p>
+      </li>
+    </ol>
+  </statement>
+</lemma>
 
 
 </subsection>
