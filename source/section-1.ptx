@@ -32,15 +32,15 @@
       <cell>Average Velocity <m>(m/s)</m></cell>
     </row>
     <row>
-      <cell><m>3\leq t \leq 3.01</m></cell>
+      <cell><m>3&lt;q t &lt;q 3.01</m></cell>
       <cell>29.449</cell>
     </row>
     <row>
-     <cell><m>3\leq t \leq 3.001</m></cell>
+     <cell><m>3&lt;q t &lt;q 3.001</m></cell>
       <cell>29.4049</cell>
     </row>
     <row>
-     <cell><m>3\leq t \leq 3.0001</m></cell>
+     <cell><m>3&lt;q t &lt;q 3.0001</m></cell>
       <cell>29.40049</cell>
     </row>
   </tabular>
@@ -130,11 +130,11 @@
 </p>
 
 <md>
- \left| \frac{g(x)-g(c)}{x-c}-L \right| \le \epsilon
+ &lt;ft| \frac{g(x)-g(c)}{x-c}-L \right| &lt; \epsilon
 </md>
 
 <p>
-  whenever <m>|x-c| \le \delta</m>
+  whenever <m>|x-c| &lt; \delta</m>
 </p>
 
 <p>
@@ -205,7 +205,7 @@
     We want to show <m>\displaystyle \lim_{x\to c} g(x) = g(c)</m>. By the Algebraic Limit Theorem for functional limits
 
     <md>
-      \lim_{x\to c} (g(x)-g(c)) = \lim_{x\to c} \left( \frac{g(x)-g(c)}{x-c}\right)(x-c) = g'(c) \cdot 0 = 0.
+      \lim_{x\to c} (g(x)-g(c)) = \lim_{x\to c} &lt;ft( \frac{g(x)-g(c)}{x-c}\right)(x-c) = g'(c) \cdot 0 = 0.
     </md>
     
   </p>
@@ -463,11 +463,11 @@ f(x) = \begin{cases}
   </p>
 
   <p>
-    Let <m>f: [a,b] \to \mathbf{R}</m> be continuous. If <m>L</m> is a real number satisfying <m>f(a)\le L \le f(b)</m> or <m>f(a)\ge L \ge f(b)</m>, then there exists a point <m>c \in (a,b)</m> such that <m>f(c) = L</m>.
+    Let <m>f: [a,b] \to \mathbf{R}</m> be continuous. If <m>L</m> is a real number satisfying <m>f(a)&lt; L &lt; f(b)</m> or <m>f(a)\ge L \ge f(b)</m>, then there exists a point <m>c \in (a,b)</m> such that <m>f(c) = L</m>.
   </p>
 
   <p>
-    We say that a function <m>g(x)</m> (not necessarily continuous) satisfies the Intermediate Value Property if whenever <m>L</m> is a real number satisfying <m>g(a)\le L \le g(b)</m> or <m>g(a)\ge L \ge g(b)</m>, then there exists a point <m>c \in (a,b)</m> such that <m>g(c) = L</m>.
+    We say that a function <m>g(x)</m> (not necessarily continuous) satisfies the Intermediate Value Property if whenever <m>L</m> is a real number satisfying <m>g(a)&lt; L &lt; g(b)</m> or <m>g(a)\ge L \ge g(b)</m>, then there exists a point <m>c \in (a,b)</m> such that <m>g(c) = L</m>.
   </p>
 
   <p>
@@ -508,9 +508,9 @@ f(x) = \begin{cases}
 
 <proof>
   <p>
-    Since <m>c</m> is a maximum, <m>f(x)-f(c) \leq 0</m> and hence
+    Since <m>c</m> is a maximum, <m>f(x)-f(c) &lt;q 0</m> and hence
     <md>
-      \lim_{x\to c^+} \frac{f(x)-f(c)}{x-c} \leq 0
+      \lim_{x\to c^+} \frac{f(x)-f(c)}{x-c} &lt;q 0
     </md>
 
     while
@@ -542,17 +542,19 @@ f(x) = \begin{cases}
     <ol>
       <li>
         <p>
-          If <m>f'(c) \le 0</m> there exists <m>\delta>0</m> such that <m>f(x) \le f(c)</m> for <m>x \in I</m> such that <m>c \le x \le c+\delta</m>.
+          If <m>f'(c) &lt; 0</m> there exists <m>\delta>0</m> such that <m>f(x) &lt; f(c)</m> for <m>x \in I</m> such that <m>c &lt; x &lt; c+\delta</m>.
         </p>
       </li>
       <li>
         <p>
-          If <m>f'(c)>0</m>, then there is a number <m>\delta>0</m> such that <m>f(x) \le f(c)</m> for <m>x \in I</m> such that <m>c-\delta \le x \le c</m>
+          If <m>f'(c)>0</m>, then there is a number <m>\delta>0</m> such that <m>f(x) &lt; f(c)</m> for <m>x \in I</m> such that <m>c-\delta &lt; x &lt; c</m>
         </p>
       </li>
     </ol>
   </statement>
 </lemma>
+
+
 
 
 </subsection>
