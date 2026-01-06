@@ -130,7 +130,7 @@
 </p>
 
 <md>
- &lt;ft| \frac{g(x)-g(c)}{x-c}-L \right| &lt; \epsilon
+ \left| \frac{g(x)-g(c)}{x-c}-L \right| &lt; \epsilon
 </md>
 
 <p>
@@ -554,7 +554,63 @@ f(x) = \begin{cases}
   </statement>
 </lemma>
 
+<proof>
+  <p>
+    (1) Since 
 
+ <md>
+     \lim_{x\to c} \frac{f(x)-f(c)}{x-c} = f'(c) &lt; 0
+ </md>
+
+ there exists <m>\delta &gt; 0</m> such that if <m>x\in I</m> and <m>0 &lt; |x-c| &lt; \delta</m>, then 
+
+<md>
+    \frac{f(x)-f(c)}{x-c} &lt; 0
+</md>
+  </p>
+
+  <p>
+    If <m>c &lt; x</m> then the denominator is positive and hence <m>f(x)-f(c) &lt; 0</m> so <m>f(x) &lt; f(c)</m> if <m>c &lt; x &lt; c+\delta</m>.
+  </p>
+</proof>
+
+<theorem xml:id="thm-Darboux">
+  <title>Darboux's Theorem (AKA IVT for derivatives)</title>
+  
+  
+  <statement>
+    <p>
+      If <m>f</m> is differentiable on an interval <m>[a,b]</m> and if <m>\alpha</m> satisfies <m>f'(a) &lt; \alpha &lt; f'(b)</m> (or <m>f'(b) &lt; \alpha &lt; f'(a)</m>), then there exists a point <m>c \in (a,b)</m> where <m>f'(c) = \alpha</m>.
+    </p>
+  </statement>
+</theorem>
+
+<proof>
+  <p>
+    Let <m>g(x) =f(x)- \alpha x</m>. Then <m>g</m> is differentiable on <m>[a,b]</m> and <m>g'(x) = f'(x)-\alpha</m>. Also <m>g'(a) &lt; 0 &lt; g'(b)</m> and we want to show that there exists <m>c \in (a,b)</m> where <m>g'(c) = 0</m>.
+  </p>
+
+  <p>
+    Since <m>g'(a) &lt; 0</m>, it follows from the lemma that the minimum of <m>g</m> does not occur at <m>a</m>. Likewise since <m>g'(b) &gt; 0</m> it also follows that the minimum of <m>g</m> does not occur at <m>b</m>.
+  </p>
+
+  <p>
+    Thus it must be that the minimum of <m>g</m> occurs at <m>c\in (a,b)</m>. Hence by the interior extremum theorem <m>f'(c) = 0</m> and this completes the proof.
+  </p>
+</proof>
+
+<example>
+  <p>
+    Recall Dirichlet's function is defined by 
+    <md>
+      g(x) = \begin{cases} 
+      \hfill  1  \amp \text{ if $x \in \mathbf{Q}$} \\
+      \hfill  0 \hfill \amp \text{ if $x \notin \mathbf{Q} $} \\
+  \end{cases}
+    </md>
+    Because this function doesn't satisfy the Intermediate Value Property, it cannot be the derivative of another function. Thus Dirichlet's function does not have an antiderivative.
+  </p>
+</example>
 
 
 </subsection>
