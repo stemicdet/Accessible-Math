@@ -141,6 +141,8 @@
   Note that by letting <m>x = c+h</m> the derivative can be rewritten as 
 </p>
 
+
+
 <md>
   \lim_{h\to 0} \frac{g(c+h)-g(c)}{h}
 </md>
@@ -150,6 +152,42 @@
 <p>
   In geometry a tangent line to a curve is a line that touches the curve and follows the same direction as the curve at the point of contact.
 </p>
+
+
+<image width="60%">
+  <prefigure xmlns="https://prefigure.org"
+             label="prefigure-rectangle">
+   <diagram dimensions="(300,300)" margins="5">
+  <definition>f(x)=sin(1/x)</definition>
+  <definition>g(x)=cos(x)</definition>
+  <definition>a = 1</definition>
+  <coordinates bbox="(-5,-5,5,5)">
+    <grid-axes xlabel="x" ylabel="y"/>
+    <graph at="graph" function="f" stroke = "green"/>
+    <graph at="graph2" function="g"/>
+    <tangent-line at="tangent" function="f" point="a"/>
+    <point at="point" p="(a,f(a))" alignment="ne">
+      <m>(a,f(a))</m>
+    </point>
+  </coordinates>
+
+  <annotations>
+    <annotation ref="figure"
+                text="The graph of a function and its tangent line at the point a equals 1">
+      <annotation ref="graph-group" text="The graph and its tangent line">
+        <annotation ref="graph" text="The graph of the function f" sonify="yes"/>
+        <annotation ref="point" text="The point a comma f of a"/>
+        <annotation ref="tangent" text="The tangent line to the graph of f at the point"/>
+      </annotation>
+    </annotation>
+  </annotations>
+</diagram>
+     
+  </prefigure>
+</image>
+
+
+
 
 <figure>
       <caption>A tangent line to a curve</caption>
